@@ -18,9 +18,9 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          image: engyahmed3/laravel-authentication
           file: ./Dockerfile
           push: true
-          tags: engyahmed3/laravel-authentication:latest
-          secrets: |
-            username=${{ secrets.HUB_USERNAME }}
-            password=${{ secrets.HUB_PASSWORD }}
+          username: "${{ secrets.HUB_USERNAME }}"
+          password: "${{ secrets.HUB_PASSWORD }}"
+          tags: latest
